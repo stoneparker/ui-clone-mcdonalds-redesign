@@ -2,6 +2,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Ionicons } from '@expo/vector-icons';
+import { View } from 'react-native';
 
 import Onboarding from './pages/Onboarding';
 import Home from './pages/Home';
@@ -48,11 +50,48 @@ const BottomRoutes = () => (
       screenOptions={{
          cardStyle: { backgroundColor: '#F9F9F9' }
       }}
+      tabBarOptions={{
+         style: {
+            elevation: 0,
+            shadowOpacity: 0,
+            height: 64,
+         },
+         tabStyle: {
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+         },
+         iconStyle: {
+            flex: 0,
+            width: 20,
+            height: 20,
+         },
+         showLabel: false,
+      }}
    >
-      <AppBottomTab.Screen name="Home" component={Home} />
-      <AppBottomTab.Screen name="Search" component={Search} />
+      <AppBottomTab.Screen 
+         name="Home" 
+         component={Home} 
+         options={{
+            tabBarIcon: ({ color, size, focused }) => (
+               <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF', padding: 2 }}>
+                  <Ionicons name="ios-home" size={size} color={focused ? '#F37713' : color} />
+               </View>
+            )
+         }}
+      />
+      <AppBottomTab.Screen 
+         name="Search" 
+         component={Search} 
+         options={{
+            tabBarIcon: ({ color, size, focused }) => (
+               <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF', padding: 2, borderRadius: 4 }}>
+                  <Ionicons name="ios-search" size={size} color={focused ? '#F37713' : color} />
+               </View>
+            )
+         }}
+      />
    </AppBottomTab.Navigator>
 )
 
 export default StackRoutes;
-
