@@ -2,13 +2,14 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, Feather } from '@expo/vector-icons';
 import { View } from 'react-native';
 
 import Onboarding from './pages/Onboarding';
 import Home from './pages/Home';
 import Search from './pages/Search';
 import ShoppingCart from './pages/ShoppingCart';
+import AuxScreen from './pages/AuxScreen';
 
 import MainHeader from './components/MainHeader';
 
@@ -74,8 +75,8 @@ const BottomRoutes = () => (
          component={Home} 
          options={{
             tabBarIcon: ({ color, size, focused }) => (
-               <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF', padding: 2 }}>
-                  <Ionicons name="ios-home" size={size} color={focused ? '#F37713' : color} />
+               <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF' }}>
+                  <Feather name="home" size={size} color={focused ? '#F37713' : color} />
                </View>
             )
          }}
@@ -85,8 +86,30 @@ const BottomRoutes = () => (
          component={Search} 
          options={{
             tabBarIcon: ({ color, size, focused }) => (
-               <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF', padding: 2, borderRadius: 4 }}>
-                  <Ionicons name="ios-search" size={size} color={focused ? '#F37713' : color} />
+               <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF', borderRadius: 4 }}>
+                  <Feather name="search" size={size} color={focused ? '#F37713' : color} />
+               </View>
+            )
+         }}
+      />
+      <AppBottomTab.Screen 
+         name="Favorites" 
+         component={AuxScreen} 
+         options={{
+            tabBarIcon: ({ color, size, focused }) => (
+               <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF', borderRadius: 4 }}>
+                  <Feather name="heart" size={size} color={focused ? '#F37713' : color} />
+               </View>
+            )
+         }}
+      />
+      <AppBottomTab.Screen 
+         name="Profile" 
+         component={AuxScreen} 
+         options={{
+            tabBarIcon: ({ color, size, focused }) => (
+               <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF', borderRadius: 4 }}>
+                  <Feather name="user" size={size} color={focused ? '#F37713' : color} />
                </View>
             )
          }}
