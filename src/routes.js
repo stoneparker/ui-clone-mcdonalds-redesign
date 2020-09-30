@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons, Feather } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 import { View } from 'react-native';
 
 import Onboarding from './pages/Onboarding';
@@ -75,7 +75,7 @@ const BottomRoutes = () => (
          component={Home} 
          options={{
             tabBarIcon: ({ color, size, focused }) => (
-               <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF' }}>
+               <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF', width: 40, height: 40, alignItems: 'center', justifyContent: 'center', borderRadius: 13 }}>
                   <Feather name="home" size={size} color={focused ? '#F37713' : color} />
                </View>
             )
@@ -86,7 +86,7 @@ const BottomRoutes = () => (
          component={Search} 
          options={{
             tabBarIcon: ({ color, size, focused }) => (
-               <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF', borderRadius: 4 }}>
+               <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF', width: 40, height: 40, alignItems: 'center', justifyContent: 'center', borderRadius: 13 }}>
                   <Feather name="search" size={size} color={focused ? '#F37713' : color} />
                </View>
             )
@@ -97,7 +97,7 @@ const BottomRoutes = () => (
          component={AuxScreen} 
          options={{
             tabBarIcon: ({ color, size, focused }) => (
-               <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF', borderRadius: 4 }}>
+               <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF', width: 40, height: 40, alignItems: 'center', justifyContent: 'center', borderRadius: 13 }}>
                   <Feather name="heart" size={size} color={focused ? '#F37713' : color} />
                </View>
             )
@@ -108,7 +108,7 @@ const BottomRoutes = () => (
          component={AuxScreen} 
          options={{
             tabBarIcon: ({ color, size, focused }) => (
-               <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF', borderRadius: 4 }}>
+               <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF', width: 40, height: 40, alignItems: 'center', justifyContent: 'center', borderRadius: 13 }}>
                   <Feather name="user" size={size} color={focused ? '#F37713' : color} />
                </View>
             )
