@@ -13,6 +13,7 @@ import AuxScreen from './pages/AuxScreen';
 
 import MainHeader from './components/MainHeader';
 import ProductDetailsHeader from './components/ProductDetailsHeader';
+import TabBarIcon from './components/TabBarIcon';
 
 const AppStack = createStackNavigator();
 const AppBottomTab = createBottomTabNavigator();
@@ -83,9 +84,12 @@ const BottomRoutes = () => (
          component={Home} 
          options={{
             tabBarIcon: ({ color, size, focused }) => (
-               <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF', width: 40, height: 40, alignItems: 'center', justifyContent: 'center', borderRadius: 13 }}>
-                  <Feather name="home" size={size} color={focused ? '#F37713' : color} />
-               </View>
+               <TabBarIcon 
+                  color={color} 
+                  size={size} 
+                  focused={focused} 
+                  icon="home" 
+               />
             )
          }}
       />
@@ -94,9 +98,12 @@ const BottomRoutes = () => (
          component={Search} 
          options={{
             tabBarIcon: ({ color, size, focused }) => (
-               <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF', width: 40, height: 40, alignItems: 'center', justifyContent: 'center', borderRadius: 13 }}>
-                  <Feather name="search" size={size} color={focused ? '#F37713' : color} />
-               </View>
+               <TabBarIcon 
+                  color={color} 
+                  size={size} 
+                  focused={focused} 
+                  icon="search" 
+               />
             )
          }}
       />
@@ -105,9 +112,12 @@ const BottomRoutes = () => (
          component={AuxScreen} 
          options={{
             tabBarIcon: ({ color, size, focused }) => (
-               <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF', width: 40, height: 40, alignItems: 'center', justifyContent: 'center', borderRadius: 13 }}>
-                  <Feather name="heart" size={size} color={focused ? '#F37713' : color} />
-               </View>
+               <TabBarIcon 
+                  color={color} 
+                  size={size} 
+                  focused={focused} 
+                  icon="heart" 
+               />
             ),
          }}
       />
@@ -116,9 +126,12 @@ const BottomRoutes = () => (
          component={AuxScreen} 
          options={{
             tabBarIcon: ({ color, size, focused }) => (
-               <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF', width: 40, height: 40, alignItems: 'center', justifyContent: 'center', borderRadius: 13 }}>
-                  <Feather name="user" size={size} color={focused ? '#F37713' : color} />
-               </View>
+               <TabBarIcon 
+                  color={color} 
+                  size={size} 
+                  focused={focused} 
+                  icon="user" 
+               />
             )
          }}
       />
