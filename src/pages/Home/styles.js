@@ -51,7 +51,7 @@ export const Category = styled.TouchableOpacity`
    align-items: center;
 `;
 
-export const Product = styled.View`
+export const Product = styled(RectButton)`
    width: 47%;
    background: #FFF;
    margin: 5px;

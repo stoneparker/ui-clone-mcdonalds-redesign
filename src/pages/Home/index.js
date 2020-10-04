@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ScrollView, View, FlatList } from 'react-native';
 import { Feather } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 import Hamburger from '../../assets/hamburger.svg';
 import Kebab from '../../assets/kebab.svg';
@@ -8,6 +9,8 @@ import Chicken from '../../assets/chicken.svg';
 import IceCream from '../../assets/ice-cream.svg';
 import Fries from '../../assets/fries.svg';
 import Soda from '../../assets/soda.svg';
+
+import products from '../../services/products';
 
 import { 
   Container,
@@ -28,6 +31,7 @@ import {
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState(1);
+  const { navigate } = useNavigation();
 
   const categories = [
     { 
@@ -87,21 +91,21 @@ const Home = () => {
             <Subtitle>Popular</Subtitle>
           </Content>
         }
-        data={categories}
-        keyExtractor={category => String(category.id)}
+        data={products}
+        keyExtractor={product => String(product.product_id)}
         numColumns={2}
         // ListHeaderComponentStyle={{ paddingHorizontal: 30 }}
         contentContainerStyle={{ paddingHorizontal: 15, width: '100%' }}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
-          <Product>
+          <Product onPress={() => navigate('ProductDetails')}>
             <ProductImg 
-              source={{ uri: 'https://mcdonalds.co.nz/sites/mcdonalds.co.nz/files/QuarterPounderDouble_700x487.png' }} 
+              source={{ uri: item.product_img }} 
               resizeMode='contain'
             />
-            <ProductName>Double Quarteirão</ProductName>
+            <ProductName>{item.product_name}</ProductName>
             <ProductFooter>
-              <ProductPrice>$ 3.40</ProductPrice>
+              <ProductPrice>$ {item.product_price}</ProductPrice>
               <BtnAddToCart>
                 <Feather name="shopping-cart" size={14} color="#47BC00" />
               </BtnAddToCart>

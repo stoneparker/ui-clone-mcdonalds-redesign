@@ -1,9 +1,12 @@
 import React from 'react';
-import { View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { Ionicons, Feather } from '@expo/vector-icons';
 
-import { Container, Logo } from './styles';
+import { Container, Logo, RightBtn } from './styles';
 
 const MainHeader = ({ backgroundColor }) => {
+   const { navigate } = useNavigation();
+
    return (
       <Container color={backgroundColor === 'yellow' ? '#FFCC00' : '#F9F9F9'}>
          <Logo 
@@ -13,6 +16,16 @@ const MainHeader = ({ backgroundColor }) => {
             }}
             resizeMode={backgroundColor === 'yellow' ? 'cover' : 'contain'}
          />
+         <RightBtn 
+            onPress={() => navigate('ProductDetails')}
+            color={backgroundColor === 'yellow' ? '#FFCC00' : '#FFF'}
+         >
+            {backgroundColor !== 'yellow' ?  
+               <Feather name="shopping-cart" color="#312C24" size={17} />
+            : 
+               <Ionicons name="ios-help" color="#312C24" size={17} />
+            } 
+         </RightBtn>
       </Container>
    );
 }

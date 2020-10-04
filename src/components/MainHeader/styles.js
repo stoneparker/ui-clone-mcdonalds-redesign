@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import Constants from 'expo-constants';
+import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.View`
    width: 100%;
@@ -15,4 +16,16 @@ export const Container = styled.View`
 export const Logo = styled.Image`
    width: 60px;
    height: 60px;
+`;
+
+export const RightBtn = styled(RectButton)`
+   width: 45px;
+   height: 45px;
+   background: ${props => props.color};
+   position: absolute;
+   right: 20px;
+   border-radius: 10px;
+   justify-content: center;
+   align-items: center;
+   border: ${props => props.color !== '#FFCC00' ? 'none' : '3px solid #00000020'};
 `;

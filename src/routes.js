@@ -3,15 +3,16 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Feather } from '@expo/vector-icons';
-import { View } from 'react-native';
+import { View, Button } from 'react-native';
 
 import Onboarding from './pages/Onboarding';
 import Home from './pages/Home';
 import Search from './pages/Search';
-import ShoppingCart from './pages/ShoppingCart';
+import ProductDetails from './pages/ProductDetails';
 import AuxScreen from './pages/AuxScreen';
 
 import MainHeader from './components/MainHeader';
+import ProductDetailsHeader from './components/ProductDetailsHeader';
 
 const AppStack = createStackNavigator();
 const AppBottomTab = createBottomTabNavigator();
@@ -38,10 +39,16 @@ const StackRoutes = () => (
             options={{
                header: () => (
                   <MainHeader backgroundColor="white" />
-               )
+               ),
             }}
          />
-         <AppStack.Screen name="ShoppingCart" component={ShoppingCart} />
+         <AppStack.Screen 
+            name="ProductDetails" 
+            component={ProductDetails} 
+            options={{
+               header: () => <ProductDetailsHeader />
+            }}
+         />
       </AppStack.Navigator>
    </NavigationContainer>
 );

@@ -74,7 +74,7 @@ const Search = () => {
 
       <View style={{ marginHorizontal: -3, marginBottom: 10 }}>
         <ScrollView>
-          { categories.map(item =>(
+          { categories.map(item => (
             <Category key={item.id} color={item.color}>
               <CategoryTitle>{item.name}</CategoryTitle>
 
