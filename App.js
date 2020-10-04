@@ -1,6 +1,5 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { AppLoading } from 'expo';
 import { 
   useFonts, 
   NunitoSans_400Regular, 

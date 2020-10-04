@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { StatusBar } from 'expo-status-bar';
 
 import Weight from '../../assets/weight.svg';
 import BurgerSize from '../../assets/burger-size.svg';
@@ -70,6 +71,7 @@ const ProductDetails = () => {
 
   return (
     <>
+      <StatusBar style="auto" backgroundColor="#f00" />
       <ProductDetailsHeader background={headerBackground} />
       <Container 
         showsVerticalScrollIndicator={false}
