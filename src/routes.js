@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Feather } from '@expo/vector-icons';
-import { View, Button } from 'react-native';
+import { View } from 'react-native';
 
 import Onboarding from './pages/Onboarding';
 import Home from './pages/Home';
@@ -56,7 +56,7 @@ const StackRoutes = () => (
 const BottomRoutes = () => (
    <AppBottomTab.Navigator
       screenOptions={{
-         cardStyle: { backgroundColor: '#F9F9F9' }
+         cardStyle: { backgroundColor: '#F9F9F9' },
       }}
       tabBarOptions={{
          style: {
@@ -76,6 +76,7 @@ const BottomRoutes = () => (
          },
          showLabel: false,
       }}
+      backBehavior='history'
    >
       <AppBottomTab.Screen 
          name="Home" 
@@ -107,7 +108,7 @@ const BottomRoutes = () => (
                <View style={{ backgroundColor: focused ? '#FFFAE5' : '#FFF', width: 40, height: 40, alignItems: 'center', justifyContent: 'center', borderRadius: 13 }}>
                   <Feather name="heart" size={size} color={focused ? '#F37713' : color} />
                </View>
-            )
+            ),
          }}
       />
       <AppBottomTab.Screen 

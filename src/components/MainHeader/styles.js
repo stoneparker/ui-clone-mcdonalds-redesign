@@ -18,7 +18,7 @@ export const Logo = styled.Image`
    height: 60px;
 `;
 
-export const RightBtn = styled(RectButton)`
+export const RightBtn = styled.TouchableOpacity`
    width: 45px;
    height: 45px;
    background: ${props => props.color};
@@ -27,5 +27,11 @@ export const RightBtn = styled(RectButton)`
    border-radius: 10px;
    justify-content: center;
    align-items: center;
-   border: ${props => props.color !== '#FFCC00' ? 'none' : '3px solid #00000020'};
+   border: ${props => props.color !== '#FFCC00' ? 'none' : '3px solid #E7BA07'};
+`;
+
+export const HelpText = styled.Text`
+   font-family: NunitoSans_700Bold;
+   font-size: 16px;
+   color: #353028;
 `;
