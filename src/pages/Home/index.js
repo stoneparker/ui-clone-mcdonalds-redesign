@@ -18,7 +18,11 @@ import {
   Greenting,
   GreetingText,
   Title,
+  SubHeader,
   Subtitle,
+  SubHeaderOptions,
+  SubHeaderOption,
+  SelectedIndicator,
   Category,
   Product,
   ProductImg,
@@ -88,13 +92,20 @@ const Home = () => {
                 ))}
               </ScrollView>
             </View>
-            <Subtitle>Popular</Subtitle>
+            
+            <SubHeader>
+              <Subtitle>Popular</Subtitle>
+
+              <SubHeaderOptions>
+                <SubHeaderOption selected>Top</SubHeaderOption>
+                <SubHeaderOption>New</SubHeaderOption>
+              </SubHeaderOptions>
+            </SubHeader>
           </Content>
         }
         data={products}
         keyExtractor={product => String(product.product_id)}
         numColumns={2}
-        // ListHeaderComponentStyle={{ paddingHorizontal: 30 }}
         contentContainerStyle={{ paddingHorizontal: 15, width: '100%' }}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (

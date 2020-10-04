@@ -2,8 +2,6 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Feather } from '@expo/vector-icons';
-import { View } from 'react-native';
 
 import Onboarding from './pages/Onboarding';
 import Home from './pages/Home';
@@ -47,7 +45,7 @@ const StackRoutes = () => (
             name="ProductDetails" 
             component={ProductDetails} 
             options={{
-               header: () => <ProductDetailsHeader />
+               header: () => {}
             }}
          />
       </AppStack.Navigator>
@@ -77,7 +75,7 @@ const BottomRoutes = () => (
          },
          showLabel: false,
       }}
-      backBehavior='history'
+      backBehavior='none'
    >
       <AppBottomTab.Screen 
          name="Home" 

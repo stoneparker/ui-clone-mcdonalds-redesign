@@ -32,14 +32,32 @@ export const Title = styled.Text`
    margin-bottom: 20px;
 `;
 
+export const SubHeader = styled.View`
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   margin-right: 15px;
+`;
+
 export const Subtitle = styled.Text`
    font-family: NunitoSans_800ExtraBold;
    font-size: 24px;
    color: #312C24;
-   max-width: 60%;
-   line-height: 33px;
    margin: 20px 0;
 `;
+
+export const SubHeaderOptions = styled.View`
+   flex-direction: row;
+`;
+
+export const SubHeaderOption = styled.Text`
+   font-family: NunitoSans_800ExtraBold;
+   font-size: 16px;
+   color: ${props => props.selected ? '#312C24' : '#B3B1AE'};
+   margin-left: 20px;
+`;
+
+export const SelectedIndicator = styled.Text``;
 
 export const Category = styled.TouchableOpacity`
    width: 60px;

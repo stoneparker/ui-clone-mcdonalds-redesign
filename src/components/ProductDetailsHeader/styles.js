@@ -4,10 +4,10 @@ import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.View`
    width: 100%;
-   height: 110px;
+   height: ${props => props.background === 'transparent' ? 110 : 80}px;
    justify-content: space-between;
    align-items: center;
-   background-color: transparent;
+   background-color: ${props => props.background};
    flex-direction: row;
    padding: 0 30px;
    padding-top: ${Constants.statusBarHeight}px;  

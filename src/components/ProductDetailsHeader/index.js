@@ -10,11 +10,11 @@ import {
     ShoppingCartBtn,
 } from './styles';
 
-const ProductDetailsHeader = () => {
+const ProductDetailsHeader = ({ background }) => {
     const { goBack } = useNavigation();
 
     return (
-        <Container>
+        <Container background={background}>
             <GoBackBtn onPress={() => goBack()}>
                 <Feather name="chevron-left" size={17} />
             </GoBackBtn>
