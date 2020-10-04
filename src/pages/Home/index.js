@@ -98,7 +98,7 @@ const Home = () => {
         contentContainerStyle={{ paddingHorizontal: 15, width: '100%' }}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
-          <Product onPress={() => navigate('ProductDetails')}>
+          <Product onPress={() => { item.product_id == 1 ? navigate('ProductDetails') : {} }}>
             <ProductImg 
               source={{ uri: item.product_img }} 
               resizeMode='contain'
