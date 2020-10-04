@@ -46,7 +46,7 @@ const Search = () => {
       id: 5,
       name: 'Drinks',
       color: '#A747BD',
-      img_url: 'https://lh3.googleusercontent.com/proxy/8IGyUl9yxYZne20K7kc5ePJOMbYKzSzJ2ACUqhLac0AhrmBTUuR5LtYkcvpDJmKky-lw83jh3pFRelWps5nUgJ4yuiQdFtryK-Zx07NQNcSuisD2bo6VwJEJkepWnRzi0D_bRDcSkYpD'
+      img_url: 'https://img.pngio.com/mcdonalds-babycino-babycino-png-380_380.png'
     },
     { 
       id: 6,

@@ -5,7 +5,7 @@ export const Container = styled.View`
    flex: 1;
    background: #FFCC00;
    align-items: center;
-   padding: 0 25px;
+   padding: 0 25px 20px;
 `;
 
 export const RonaldImg = styled.Image`

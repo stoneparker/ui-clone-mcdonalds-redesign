@@ -37,6 +37,8 @@
         "wasm",
         "svg"
       ]
-    }
+    },
+    "description": "",
+    "githubUrl": "https://github.com/stoneparker/ui-clone-mcdonalds-redesign"
   }
 }
